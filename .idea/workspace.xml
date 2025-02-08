@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7c61cd7-2ba1-4d07-962e-ed7f6f23087c" name="Changes" comment="">
+    <list default="true" id="f7c61cd7-2ba1-4d07-962e-ed7f6f23087c" name="Changes" comment="ok front also">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/backend-deployment.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/backend-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/frontend-deployment.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/frontend-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/postgres-deployment.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/postgres-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/why.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +22,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "contexts": [
+    {
+      "name": "minikube",
+      "originalNamespace": "default"
+    }
+  ],
+  "isMigrated": true
+}]]></component>
+  <component name="KubernetesSettings">
+    <option name="contextName" value="minikube" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -30,8 +48,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -50,11 +70,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1739036907725</updated>
-      <workItem from="1739036908833" duration="2125000" />
+      <workItem from="1739036908833" duration="4941000" />
     </task>
+    <task id="LOCAL-00001" summary="ok front also">
+      <option name="closed" value="true" />
+      <created>1739041798254</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739041798254</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ok front also" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok front also" />
   </component>
 </project>

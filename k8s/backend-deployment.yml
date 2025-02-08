@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: testdocker-backend:latest  # ✅ Make sure this matches your Minikube image
+          imagePullPolicy: Never  # ✅ Prevent Kubernetes from pulling from Docker Hub
+          ports:
+            - containerPort: 8080
