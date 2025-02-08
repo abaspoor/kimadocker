@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=FootprintDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: spring-backend
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/FootprintDB  # Must match application.yml
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+    volumes:
+      - ./backend:/app
+      - ~/.m2:/root/.m2  # Cache Maven dependencies
+    ports:
+      - "8080:8080"
+    expose:
+      - 8080
+    depends_on:
+      - db
+    command: ["./mvnw", "spring-boot:run"]
+
+volumes:
+  postgres_data:

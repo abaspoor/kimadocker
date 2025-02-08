@@ -1,0 +1,30 @@
+# Use official Amazon Corretto JDK
+FROM amazoncorretto:23
+
+# Set working directory
+WORKDIR /app
+
+# Install Maven
+RUN yum install -y tar gzip maven
+
+# Copy Maven project files
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+
+# Grant execution permission to Maven Wrapper
+RUN chmod +x ./mvnw
+
+# Download dependencies (cache them)
+RUN ./mvnw dependency:go-offline -B
+
+# Copy the full project source
+COPY src/ src/
+
+# **Compile Java files to avoid missing symbols**
+RUN ./mvnw compile
+
+# Expose backend port
+EXPOSE 8080
+
+# Start Spring Boot in development mode
+CMD ["./mvnw", "spring-boot:run"]

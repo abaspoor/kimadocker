@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  ecommerce:
+    image: postgres:15  # Use the desired PostgreSQL version
+    restart: always
+    environment:
+      POSTGRES_USER: postgres  # PostgreSQL username
+      POSTGRES_PASSWORD: password  # PostgreSQL password
+      POSTGRES_DB: FootprintDB  # Database name
+    ports:
+      - "5432:5432"  # PostgreSQL default port
+    volumes:
+      - ./data.sql:/docker-entrypoint-initdb.d/data.sql  # SQL script to initialize the database
