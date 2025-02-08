@@ -1,24 +1,23 @@
-# Use official Node.js image
+# Use Node.js official image
 FROM node:20
 
-# Set working directory
+# Set working directory inside the container
 WORKDIR /frontend
 
-# Copy package.json and lock files first (to optimize caching)
+# Copy package.json and yarn.lock first (dependency caching optimization)
 COPY package.json yarn.lock ./
 
-# Enable Corepack (so we don’t need to install Yarn globally)
+# Enable Corepack for Yarn (no need to install it manually)
 RUN corepack enable
 
-# Install dependencies
+# Install dependencies (optimized)
 RUN yarn install --frozen-lockfile
 
-# Copy the rest of the application files
-COPY public/ public
-COPY src/ src
+# Copy the rest of the frontend code
+COPY . .
 
-# Expose frontend port
+# Expose port 3000
 EXPOSE 3000
 
-# Start the React app in development mode
+# Run the React app in development mode
 CMD ["yarn", "start"]

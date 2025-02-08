@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile
     container_name: spring-backend
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/FootprintDB  # Must match application.yml
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/FootprintDB
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
     volumes:
@@ -34,6 +34,24 @@ services:
     depends_on:
       - db
     command: ["./mvnw", "spring-boot:run"]
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: react-frontend
+    volumes:
+      - ./frontend:/frontend  # Mount frontend source code for live updates
+      - /frontend/node_modules # Prevent overwriting node_modules
+    env_file:
+      - ./frontend/.env  # Load environment variables
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    command: ["yarn", "start"]
 
 volumes:
   postgres_data:
