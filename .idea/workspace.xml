@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7c61cd7-2ba1-4d07-962e-ed7f6f23087c" name="Changes" comment="ok front also">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/backend-deployment.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/backend-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/frontend-deployment.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/frontend-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/postgres-deployment.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/postgres-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/why.txt" afterDir="false" />
+    <list default="true" id="f7c61cd7-2ba1-4d07-962e-ed7f6f23087c" name="Changes" comment="configed for docker and kubernetes / 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/backend-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/backend-configmap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/frontend-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/frontend-configmap.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,24 +17,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "contexts": [
+  <component name="KubernetesApiProvider">{
+  &quot;contexts&quot;: [
     {
-      "name": "minikube",
-      "originalNamespace": "default"
+      &quot;name&quot;: &quot;minikube&quot;,
+      &quot;originalNamespace&quot;: &quot;default&quot;
     }
   ],
-  "isMigrated": true
-}]]></component>
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="KubernetesSettings">
     <option name="contextName" value="minikube" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2slj9zea0cN2zWyxXI890K0yYHt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -51,7 +45,6 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -71,6 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1739036907725</updated>
       <workItem from="1739036908833" duration="4941000" />
+      <workItem from="1739081281412" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="ok front also">
       <option name="closed" value="true" />
@@ -80,7 +74,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739041798254</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="configed for docker and kubernetes">
+      <option name="closed" value="true" />
+      <created>1739081370480</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739081370480</updated>
+    </task>
+    <task id="LOCAL-00003" summary="configed for docker and kubernetes / 2">
+      <option name="closed" value="true" />
+      <created>1739081563209</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739081563209</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,6 +98,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ok front also" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok front also" />
+    <MESSAGE value="configed for docker and kubernetes" />
+    <MESSAGE value="configed for docker and kubernetes / 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="configed for docker and kubernetes / 2" />
   </component>
 </project>
