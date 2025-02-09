@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7c61cd7-2ba1-4d07-962e-ed7f6f23087c" name="Changes" comment="configed for docker and kubernetes / 2">
+    <list default="true" id="f7c61cd7-2ba1-4d07-962e-ed7f6f23087c" name="Changes" comment="configed for docker and kubernetes / 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/backend-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/backend-configmap.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/frontend-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/frontend-configmap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1739036907725</updated>
       <workItem from="1739036908833" duration="4941000" />
-      <workItem from="1739081281412" duration="357000" />
+      <workItem from="1739081281412" duration="846000" />
     </task>
     <task id="LOCAL-00001" summary="ok front also">
       <option name="closed" value="true" />
@@ -90,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739081563209</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="configed for docker and kubernetes / 3">
+      <option name="closed" value="true" />
+      <created>1739081653258</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739081653258</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +108,7 @@
     <MESSAGE value="ok front also" />
     <MESSAGE value="configed for docker and kubernetes" />
     <MESSAGE value="configed for docker and kubernetes / 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="configed for docker and kubernetes / 2" />
+    <MESSAGE value="configed for docker and kubernetes / 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="configed for docker and kubernetes / 3" />
   </component>
 </project>

@@ -6,8 +6,10 @@ services:
     container_name: postgres-db
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    env_file:
-      - ./backend/.env  # Load environment variables from backend
+    environment:
+      - POSTGRES_DB=FootprintDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
     ports:
       - "5432:5432"
     expose:
@@ -19,10 +21,9 @@ services:
       dockerfile: Dockerfile
     container_name: spring-backend
     env_file:
-      - ./backend/.env  # Load environment variables from backend
+      - ./backend/.env  # ✅ Load environment variables correctly
     volumes:
-      - ./backend:/app
-      - ~/.m2:/root/.m2  # Cache Maven dependencies
+      - ~/.m2:/root/.m2  # ✅ Cache Maven dependencies for faster builds
     ports:
       - "8080:8080"
     expose:
@@ -37,10 +38,10 @@ services:
       dockerfile: Dockerfile
     container_name: react-frontend
     env_file:
-      - ./frontend/.env  # Load environment variables from frontend
+      - ./frontend/.env  # ✅ Load environment variables correctly
     volumes:
-      - ./frontend:/frontend  # Mount frontend source code for live updates
-      - /frontend/node_modules # Prevent overwriting node_modules
+      - ./frontend:/frontend  # ✅ Mount only frontend code for live updates
+      - /frontend/node_modules # ✅ Prevent overwriting node_modules
     depends_on:
       - backend
     ports:
