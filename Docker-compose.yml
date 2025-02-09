@@ -50,5 +50,24 @@ services:
       - 3000
     command: ["yarn", "start"]
 
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    volumes:
+      - ./nginx/nginx.template.conf:/etc/nginx/nginx.template.conf
+      - ./nginx/ssl:/etc/nginx/ssl  # ✅ Mount SSL certificates
+      - ./nginx/entrypoint.sh:/entrypoint.sh
+    environment:
+      - BACKEND_URL=http://backend:8080
+      - FRONTEND_URL=http://frontend:3000
+    ports:
+      - "80:80"
+      - "443:443"  # ✅ Enable HTTPS
+    depends_on:
+      - backend
+      - frontend
+    entrypoint: [ "/bin/sh", "/entrypoint.sh" ]
+
+
 volumes:
   postgres_data:
