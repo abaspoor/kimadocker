@@ -27,4 +27,5 @@ RUN ./mvnw compile
 EXPOSE 8080
 
 # Start Spring Boot in development mode
-CMD ["./mvnw", "spring-boot:run"]
+CMD ["./mvnw", "spring-boot:run", "-Dspring.config.location=file:/app/application.yml"]
+

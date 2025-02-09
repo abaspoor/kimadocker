@@ -1,0 +1,7 @@
+ apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/FootprintDB"
+  ALLOWED_ORIGINS: "http://frontend-service,http://myapp.local"

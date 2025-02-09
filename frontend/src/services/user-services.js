@@ -1,11 +1,12 @@
 import React from 'react';
 import {enquUser, status, statusAnswers, statusUser, statusUserSignin, statusUserSignup} from '../utils/utils';
 
-const API = process.env.REACT_APP_API;
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
+
 
 // signup user
 export function fSignUp(userData){
-    return fetch(`http://localhost:8080/api/users/register`,{
+    return fetch(`${API_BASE_URL}/api/users/register`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -18,7 +19,7 @@ export function fSignUp(userData){
 // authorize user
 export function auth(credentials){
     // console.log(`${API}`);
-    return fetch(`http://localhost:8080/api/users/login`,{
+    return fetch(`${API_BASE_URL}/api/users/login`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -29,7 +30,7 @@ export function auth(credentials){
 
 
 export function ProfileSet(userData){
-    return fetch(`https://${API}/web/users/profiles/`,{
+    return fetch(`${API_BASE_URL}ers/profiles/`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -44,7 +45,7 @@ export function DeleteUser({setData,id}){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch(`http://localhost:8080/api/users/delete/${id}`, {
+    return fetch(`${API_BASE_URL}/api/users/delete/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`, //
@@ -63,7 +64,7 @@ export function DeleteUserCascade({setData,id}){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch(`http://localhost:8080/api/users/delete/cascade/${id}`, {
+    return fetch(`${API_BASE_URL}/api/users/delete/cascade/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`, //
@@ -82,7 +83,7 @@ export function DeleteUserButKeepAnswers({setData,id}){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch(`http://localhost:8080/api/users/delete/keep-answers/${id}`, {
+    return fetch(`${API_BASE_URL}/api/users/delete/keep-answers/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`, //

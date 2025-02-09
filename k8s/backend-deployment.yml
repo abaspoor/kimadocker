@@ -18,3 +18,17 @@ spec:
           imagePullPolicy: Never  # ✅ Prevent Kubernetes from pulling from Docker Hub
           ports:
             - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: backend-config  # Load ConfigMap variables
+          env:
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: SPRING_DATASOURCE_USERNAME
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: SPRING_DATASOURCE_PASSWORD

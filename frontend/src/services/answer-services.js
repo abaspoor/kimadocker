@@ -1,14 +1,15 @@
 import React from 'react';
 import {enquUser, status, statusAnswers, statusUser, statusUserSignin, statusUserSignup} from '../utils/utils';
 
-const API = process.env.REACT_APP_API;
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
+
 
 // signup user
 export function GetAllAnswersExtra(setData){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch("http://localhost:8080/api/answers/extra", {
+    return fetch(`${API_BASE_URL}/api/answers/extra`, {
         method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`, //
@@ -26,7 +27,7 @@ export function DeleteAnswer({setData,id}){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch(`http://localhost:8080/api/answers/delete/${id}`, {
+    return fetch(`${API_BASE_URL}/api/answers/delete/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`, //
@@ -46,7 +47,7 @@ export function SetAnswer({ setData, Answerjson }) {
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
 
-    return fetch(`http://localhost:8080/api/answers/set`, {
+    return fetch(`${API_BASE_URL}/api/answers/set`, {
         method: "POST",
         headers: {
             "Authorization": `Bearer ${token}`,

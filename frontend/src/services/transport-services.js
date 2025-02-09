@@ -1,11 +1,13 @@
 import React from 'react';
 import {enquUser, status, statusAnswers, statusUser, statusUserSignin, statusUserSignup} from '../utils/utils';
 
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
+
 export function GetAllTransports(setData){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch("http://localhost:8080/api/transportmethods", {
+    return fetch(`${API_BASE_URL}/api/transportmethods`, {
         method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`, //
@@ -24,7 +26,7 @@ export function DeleteTransport({setData,id}){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch(`http://localhost:8080/api/transportmethods/delete/${id}`, {
+    return fetch(`${API_BASE_URL}/api/transportmethods/delete/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`, //
@@ -43,7 +45,7 @@ export function DeleteTransportCascade({setData,id}){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch(`http://localhost:8080/api/transportmethods/delete/cascade/${id}`, {
+    return fetch(`${API_BASE_URL}/api/transportmethods/delete/cascade/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`, //
@@ -62,7 +64,7 @@ export function DeleteTransportButKeepAnswers({setData,id}){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch(`http://localhost:8080/api/transportmethods/delete/keep-answers/${id}`, {
+    return fetch(`${API_BASE_URL}/api/transportmethods/delete/keep-answers/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`, //
@@ -83,7 +85,7 @@ export function SetTransport({ setData, transportJson }) {
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
 
-    return fetch(`http://localhost:8080/api/transportmethods/create`, {
+    return fetch(`${API_BASE_URL}/api/transportmethods/create`, {
         method: "POST",
         headers: {
             "Authorization": `Bearer ${token}`,

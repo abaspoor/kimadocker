@@ -3,14 +3,14 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/FootprintDB  # Use service name `db`
-    username: postgres
-    password: password
+    url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}  # Use env variables
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   application:
     name: FootprintDB
   jpa:
     hibernate:
-      ddl-auto: update  # Ensure tables are created
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
@@ -19,4 +19,4 @@ spring:
         format_sql: true
   sql:
     init:
-      mode: always  # Ensures scripts are executed
+      mode: always

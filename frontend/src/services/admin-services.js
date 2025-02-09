@@ -1,11 +1,13 @@
 import React from 'react';
 import {enquUser, status, statusAnswers, statusUser, statusUserSignin, statusUserSignup} from '../utils/utils';
 
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
+
 export function GetAllAdmins(setData){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch("http://localhost:8080/api/users/admins", {
+    return fetch(`${API_BASE_URL}/api/users/admins`, {
         method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`, // ✅ Include the JWT token in the request
@@ -24,7 +26,7 @@ export function GetAllUsersforAdmin(setData){
     const data = localStorage.getItem("signed-user");
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
-    return fetch("http://localhost:8080/api/users/admins/getusers", {
+    return fetch(`${API_BASE_URL}/api/users/admins/getusers`, {
         method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`, // ✅ Include the JWT token in the request
@@ -45,7 +47,7 @@ export function SetAdmin({ setData, adminJson }) {
     const jsonData = JSON.parse(data);
     const token = jsonData ? jsonData.token : "notFound";
 
-    return fetch(`http://localhost:8080/api/users/setadmin`, {
+    return fetch(`${API_BASE_URL}/api/users/setadmin`, {
         method: "POST",
         headers: {
             "Authorization": `Bearer ${token}`,
